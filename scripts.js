@@ -49,3 +49,26 @@ length of each name.
 
 let lengthName = names.map((name) => name.length);
 console.log(lengthName);
+
+/*
+4. **Sorting**: Use `sort` to alphabetically sort the provinces. 
+*/
+
+const sortProvinces = provinces.sort();
+console.log(sortProvinces);
+
+/*5. **Filtering Cape**: Use `filter` to remove provinces containing "Cape". 
+Log the count of remaining provinces.*/
+
+let RemoveincludesCape = provinces.filter(
+  (provinces) => !provinces.includes("Cape")
+);
+console.log(RemoveincludesCape);
+
+/**
+ 6. **Finding 'S'**: Create a boolean array using `map` and `some` 
+ to determine if a name contains the letter 'S'.
+ */
+
+let findS = names.map((names) => names.includes("S"));
+console.log(findS);
