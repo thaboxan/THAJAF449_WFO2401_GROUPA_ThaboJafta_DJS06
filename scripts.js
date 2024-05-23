@@ -72,3 +72,57 @@ console.log(RemoveincludesCape);
 
 let findS = names.map((names) => names.includes("S"));
 console.log(findS);
+
+/*7. **Creating Object Mapping**: Use `reduce` to transform the names 
+array into an object mapping names to their respective provinces.
+*/
+
+/**
+ * const nameProvinceMap = Object.entries(
+  names.reduce((name, index) => [name, provinces[index]])
+);
+ * console.log(nameProvinceMap);
+ */
+
+const nameProvinceMap = names.reduce((map, name, index) => {
+  map[name] = provinces[index];
+  console.log(map[name]);
+  return map;
+}, {});
+
+console.log(nameProvinceMap);
+
+/*
+1. **Log Products**: Iterate over the products array, logging each product name.
+*/
+
+console.log(
+  "Products:",
+  products.map((item) => item.product)
+);
+
+/**
+ * 2. **Filter by Name Length**: Filter out products with names longer than 5 characters.
+ */
+
+console.log(
+  "Filtered Products (Name Length ≤ 5):",
+  products.filter((items) => items.product.length <= 5)
+);
+
+/**
+ * 3. **Price Manipulation**: Filter out products without prices,
+ *  convert string prices to numbers, and calculate the total price using `reduce`.
+ */
+
+const totalPrice = products
+  .filter(
+    (item) =>
+      typeof item.price === "string" &&
+      item.price.trim() !== "" &&
+      !isNaN(item.price)
+  )
+  .map((item) => parseFloat(item.price))
+  .reduce((total, price) => total + price, 0);
+
+console.log("Total Price:", totalPrice);
