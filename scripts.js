@@ -134,6 +134,31 @@ const concatString = products.reduce(
 );
 console.log(concatString);
 /*5. **Find Extremes in Prices**: Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."*/
+const highestPriced =
+  "Highest: " +
+  Math.max(
+    ...products
+      .filter((item) => item.price > 0)
+      .map((item) => Number(item.price))
+  );
+
+const lowestPriced =
+  " Lowest: " +
+  Math.min(
+    ...products
+      .filter((item) => item.price > 0)
+      .map((item) => Number(item.price))
+  );
+
+console.log(highestPriced + lowestPriced);
+
 /*
+
 6. **Object Transformation**: Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values.
 */
+console.log(
+  Object.entries(products).reduce((accumulatorArr, [, { product, price }]) => {
+    accumulatorArr.push({ name: product, cost: price });
+    return accumulatorArr;
+  }, [])
+);
