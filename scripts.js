@@ -126,3 +126,14 @@ const totalPrice = products
   .reduce((total, price) => total + price, 0);
 
 console.log("Total Price:", totalPrice);
+
+/*4. **Concatenate Product Names**: Use `reduce` to concatenate all product names into a single string.*/
+const concatString = products.reduce(
+  (string, item) => string + " " + item.product,
+  ""
+);
+console.log(concatString);
+/*5. **Find Extremes in Prices**: Identify the highest and lowest-priced items, returning a string formatted as "Highest: X. Lowest: Y."*/
+/*
+6. **Object Transformation**: Using `Object.entries` and `reduce`, recreate the products object with keys 'name' and 'cost', maintaining their original values.
+*/
