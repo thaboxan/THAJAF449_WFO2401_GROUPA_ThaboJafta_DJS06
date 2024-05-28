@@ -83,14 +83,15 @@ let RemoveincludesCape = provinces.filter(
 console.log(RemoveincludesCape);
 
 /**
- * 6. **Finding 'S'**: Create a boolean array using `map` and `some` to determine if a name contains the letter 'S'.
+ * 6. **Finding 'S'**: Create a boolean array using `map` and
+ * `some` to determine if a name contains the letter 'S'.
  * @type {boolean[]}
  */
-let findS = names.map((name) => name.includes("S"));
+const findS = names.map((name) => name.split("").some((char) => char === "S"));
 console.log(findS);
-
 /**
- * 7. **Creating Object Mapping**: Use `reduce` to transform the names array into an object mapping names to their respective provinces.
+ * 7. **Creating Object Mapping**: Use `reduce` to transform the
+ *  names array into an object mapping names to their respective provinces.
  * @type {Object.<string, string>}
  */
 const nameProvinceMap = names.reduce((map, name, index) => {
@@ -98,8 +99,7 @@ const nameProvinceMap = names.reduce((map, name, index) => {
   return map;
 }, {});
 
-console.log(nameProvinceMap);
-
+console.log("nameProvinceMap:", nameProvinceMap);
 //ADVANCED~
 /**
  * 1. **Log Products**: Iterate over the products array, logging each product name.
@@ -110,7 +110,8 @@ console.log(
 );
 
 /**
- * 2. **Filter by Name Length**: Filter out products with names longer than 5 characters.
+ * 2. **Filter by Name Length**: Filter out products with names
+ * longer than 5 characters.
  * @type {Object[]}
  */
 console.log(
@@ -119,7 +120,8 @@ console.log(
 );
 
 /**
- * 3. **Price Manipulation**: Filter out products without prices, convert string prices to numbers, and calculate the total price using `reduce`.
+ * 3. **Price Manipulation**: Filter out products without prices, convert string prices to numbers,
+ * and calculate the total price using `reduce`.
  * @type {number}
  */
 
@@ -127,16 +129,18 @@ console.log(
 const validProducts = products.filter(
   (item) => String(item.price).trim() !== ""
 );
-console.log(`Valid Products ${validProducts}`);
+console.log("Valid Products", validProducts);
+
 // Convert prices to numbers and calculate the total
 const totalPrice = validProducts.reduce((total, item) => {
   const price = parseFloat(item.price);
   return isNaN(price) ? total : total + price;
 }, 0);
 
-console.log(`Total Price: R${totalPrice}`);
+console.log(`Total Price : R ${totalPrice}`);
 /**
- * 4. **Concatenate Product Names**: Use `reduce` to concatenate all product names into a single string.
+ * 4. **Concatenate Product Names**: Use `reduce` to concatenate
+ *  all product names into a single string.
  * @type {string}
  */
 const concatString = products.reduce(

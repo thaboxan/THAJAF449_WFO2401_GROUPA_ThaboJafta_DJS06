@@ -1,0 +1,11 @@
+body {
+    font-family: monospace;
+    background-color: #282a36;
+    color: #f8f8f2;
+    padding: 20px;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
